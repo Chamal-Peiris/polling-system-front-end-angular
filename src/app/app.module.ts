@@ -7,6 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PollComponent } from './poll/poll.component';
 import { PolDetailComponent } from './pol-detail/pol-detail.component';
+import {UserService} from "./services/user-service";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -18,9 +20,10 @@ import { PolDetailComponent } from './pol-detail/pol-detail.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
