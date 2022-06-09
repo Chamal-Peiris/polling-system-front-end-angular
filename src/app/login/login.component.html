@@ -1,7 +1,7 @@
 <div id="wrapper" class="container">
  <form>
    <h1>Polling System</h1>
-   <input name="txt-name" class="form-control"  type="text" placeholder="Enter Your name"[(ngModel)]="name">
+   <input #txtName name="txt-name" class="form-control"  type="text" placeholder="Enter Your name"[(ngModel)]="name">
    <div id="button-wrapper">
      <button class="btn btn-primary" (click)="enter()">ENTER</button>
    </div>
