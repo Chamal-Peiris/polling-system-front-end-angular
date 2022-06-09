@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Poll} from "../dto/Poll";
+import {UserService} from "../services/user-service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-dashboard',
@@ -7,12 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  polls:Array<number>=[];
-  constructor() { }
+  polls:Array<Poll>=[];
+  constructor(private userService:UserService,private routerService:Router) { }
 
   ngOnInit(): void {
+    if(!this.userService.getPrincipal()){
+      this.routerService.navigateByUrl('/login');
+    }
   }
-createPoll(){
-    this.polls.push(1);
+createPoll(title:string){
+    this.polls.push(new Poll(Math.random(),title,this.userService.getPrincipal()!));
 }
 }

@@ -1,12 +1,12 @@
 <header>
 
-  <input class="form-control" type="text" placeholder="Enter a new  title">
-  <button type="button" class="btn btn-primary" (click)="createPoll()">CREATE</button>
+  <input #txtTitle class="form-control" type="text" placeholder="Enter a new  title">
+  <button type="button" class="btn btn-primary" (click)="createPoll(txtTitle.value);txtTitle.value='';">CREATE</button>
 
 
 </header>
 <main>
-  <app-poll *ngFor="let a of polls"></app-poll>
+  <app-poll *ngFor="let p of polls"  [poll]="p"></app-poll>
   <h2 *ngIf="polls.length==0" class="text-center">Create a new Poll to get Started</h2>
 
 </main>
