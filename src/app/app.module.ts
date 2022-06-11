@@ -9,6 +9,9 @@ import { PollComponent } from './poll/poll.component';
 import { PolDetailComponent } from './pol-detail/pol-detail.component';
 import {UserService} from "./services/user-service";
 import {FormsModule} from "@angular/forms";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {NgProgressModule} from "ngx-progressbar";
+import {NgProgressHttpModule} from "ngx-progressbar/http";
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import {FormsModule} from "@angular/forms";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    NgProgressModule,
+    NgProgressHttpModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

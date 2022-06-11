@@ -20,6 +20,8 @@ export class LoginComponent implements OnInit {
    if( this.userService.getPrincipal()){
      this.routerservice.navigateByUrl('/dashboard');
    }
+
+
   }
 
   enter(): void {

@@ -6,7 +6,8 @@
 
 </header>
 <main>
-  <app-poll *ngFor="let p of polls"  [poll]="p"></app-poll>
+  <app-poll *ngFor="let p of polls"  [poll]="p" (click)="navigate(p.id!)"></app-poll>
   <h2 *ngIf="polls.length==0" class="text-center">Create a new Poll to get Started</h2>
 
 </main>
+<ng-progress></ng-progress>
